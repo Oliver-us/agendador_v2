@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agendar Tarefas 2.0</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="container">
+            <div class="cabecalho">
+                <i class="material-icons icone-logo">task_alt</i>
+
+                <div>
+                    <h1>Agendar Tarefas</h1>
+                    <p>Organize suas atividades de forma simples.</p>
+                </div>
+
+                <span class="versao">VERSÃO 2.0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container principal">
+
+        <!-- Formulário -->
+        <section class="card painel">
+
+            <h2>
+                <i class="material-icons">add_task</i>
+                Nova tarefa
+            </h2>
+
+            <p class="descricao">
+                Preencha os campos para adicionar uma nova tarefa.
+            </p>
+
+            <div class="input-field">
+                <input type="text"
+                       class="campoTitulo"
+                       id="campoTitulo"
+                       maxlength="100">
+
+                <label for="campoTitulo">Título da tarefa *</label>
+            </div>
+
+            <div class="input-field">
+                <textarea class="materialize-textarea campoObs"
+                          id="campoObs"
+                          maxlength="500"></textarea>
+
+                <label for="campoObs">Observações *</label>
+            </div>
+
+            <div class="input-field">
+                <select class="campoPrioridade" id="campoPrioridade">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média" selected>Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+
+                <label for="campoPrioridade">Prioridade</label>
+            </div>
+
+            <button id="botao"
+                    type="button"
+                    class="btn waves-effect waves-light botao">
+
+                <i class="material-icons left">add</i>
+                Adicionar tarefa
+
+            </button>
+
+        </section>
+
+        <!-- Indicadores -->
+        <section class="indicadores">
+
+            <div class="card indicador">
+                <i class="material-icons azul">format_list_bulleted</i>
+
+                <div>
+                    <span>Total de tarefas</span>
+                    <strong id="totalTarefas">0</strong>
+                </div>
+            </div>
+
+            <div class="card indicador">
+                <i class="material-icons laranja">pending_actions</i>
+
+                <div>
+                    <span>Pendentes</span>
+                    <strong id="totalPendentes">0</strong>
+                </div>
+            </div>
+
+            <div class="card indicador">
+                <i class="material-icons verde">task_alt</i>
+
+                <div>
+                    <span>Concluídas</span>
+                    <strong id="totalConcluidas">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Tabela -->
+        <section class="card painel">
+
+            <div class="titulo-tabela">
+                <div>
+                    <h2>
+                        <i class="material-icons">checklist</i>
+                        Minhas tarefas
+                    </h2>
+
+                    <p class="descricao">
+                        Gerencie suas atividades cadastradas.
+                    </p>
+                </div>
+
+                <div class="filtro">
+                    <label for="filtroTarefas">Filtrar tarefas</label>
+
+                    <select id="filtroTarefas">
+                        <option value="todas">Todas</option>
+                        <option value="pendentes">Pendentes</option>
+                        <option value="concluidas">Concluídas</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tabela-container">
+
+                <table class="highlight tarefas">
+
+                    <thead>
+                        <tr>
+                            <th>Tarefa</th>
+                            <th>Observações</th>
+                            <th>Prioridade</th>
+                            <th>Concluir</th>
+                            <th>Apagar</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <!-- Linhas inseridas pelo jQuery -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div id="mensagemVazia" class="mensagem-vazia">
+                <i class="material-icons">event_note</i>
+                <p>Nenhuma tarefa cadastrada.</p>
+            </div>
+
+        </section>
+
+        <footer>
+            Agendar Tarefas 2.0 — Desenvolvido com jQuery e Materialize CSS.
+        </footer>
+
+    </main>
+
+    <script src="js/jquery-3.5.1.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
